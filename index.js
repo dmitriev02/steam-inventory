@@ -19,10 +19,7 @@ const getItemId = (classId, array) => {
 const loadSteamInventory = (steamid, appId, contextId, callback) => {
   request(loadInventoryLink(steamid, appId, contextId), (error, response) => {
     if(error || response.body == "null" || response.statusCode != 200) {
-      let error = {
-        error: true,
-        errorText: "Can't load user Steam inventory. Please, check if it hidden or appId, contextId is incorrect."
-      };
+      let error = true;
       callback([], error);
     } else {
       let userInventory = [];
@@ -51,10 +48,10 @@ const loadSteamInventory = (steamid, appId, contextId, callback) => {
         };
         userInventory.push(itemModel);
       });
-      let error = {
-        error: false
-      };
+      let error = false;
       callback(userInventory, error);
     }
   });
 }
+
+module.exports = loadSteamInventory;
