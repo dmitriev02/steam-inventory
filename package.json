@@ -1,16 +1,10 @@
 {
   "name": "steam-inventory",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "The package helps you to load user Steam inventory without any limits",
   "main": "index.js",
   "dependencies": {
     "request": "^2.79.0"
-  },
-  "devDependencies": {
-    "chai": "^3.5.0"
-  },
-  "scripts": {
-    "test": "npm test"
   },
   "repository": {
     "type": "git",
